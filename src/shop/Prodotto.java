@@ -26,81 +26,92 @@ import java.util.Random;
 // BONUS_  Aggiungete alla classe Prodotto un metodo per il calcolo del prezzo scontato per clienti con tessera fedeltà, che applica al prezzo uno sconto del 2%. Per gli Smartphone, lo sconto è del 5% se la quantità di memoria è inferiore a 32GB, altrimenti rimane del 2%. Per i Televisori lo sconto è del 10% se la televisione non è smart, altrimenti rimane del 2%. Per le Cuffie lo sconto è del 7% se sono cablate, altrimenti rimane del 2%. Nella classe carrello chiedere all’utente se possiede una carta fedeltà In base alla risposta, calcolare il totale del carrello come somma dei prezzi base o dei prezzi scontati.
 
 public class Prodotto {
-        private final int codice;
-        private String  nome;
-        private String  descrizione;
-        private double prezzo;
-        private double iva;
 
+    private int code;
+    private String name;
+    private String description;
+    private BigDecimal price;
+    private BigDecimal vat;
 
-    public Prodotto(String nome, String descrizione, double prezzo, double iva) {
-        this.codice = generateRandomCode();
-        this.nome = nome;
-        this.descrizione = descrizione;
-        this.prezzo = prezzo;
-        this.iva = iva;
+    private static int counter = 0;
+
+    public Prodotto(String name, String description, BigDecimal price, BigDecimal vat) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.vat = vat;
+        counter++;
+        this.code = counter;
     }
-    public int getCodice() {
-        return codice;
+
+    public int getCode() {
+        return code;
     }
-    public String getNome() {
-        return nome;
+
+    public String getName() {
+        return name;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+
+    public String getDescription() {
+        return description;
     }
-    public String getDescrizione(){
-        return descrizione;
+
+    public BigDecimal getPrice() {
+        return price;
     }
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
+
+    public BigDecimal getVat() {
+        return vat;
     }
-    public double getPrezzo() {
-        return prezzo;
+
+    public void setName(String name) {
+        this.name = name;
     }
-    public void setPrezzo(double prezzo) {
-        this.prezzo = prezzo;
+
+    public void setDescription(String description) {
+        this.description = description;
     }
-    public double getIva() {
-        return iva;
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
-    public void setIva(double iva) {
-        this.iva = iva;
+
+    public void setVat(BigDecimal vat) {
+        this.vat = vat;
     }
-    public double getPrezzoConIva() {
-        return prezzo + (prezzo +iva / 100);
+
+    public BigDecimal getFullPrice() {
+        // prezzo base + prezzo base * iva
+        return price.add(price.multiply(vat)).setScale(2, RoundingMode.HALF_EVEN);
+
     }
-    public String getNomeEsteso() {
-        return String.format("%08d-%s", codice, nome);
+
+    public String getFullName() {
+        return code + "-" + name;
     }
-    public int generateRandomCode() {
+
+    private int generateCode() {
         Random random = new Random();
-        return random.nextInt(100000000);
+        return random.nextInt(1, 100000000);
     }
-    public double calcolaPrezzoScontato(boolean haTesseraFedelta) {
-        double sconto = haTesseraFedelta ? 0.02 : 0.0;
-        return prezzo - (prezzo * sconto);
+
+    private String getPaddedCode() {
+        String codeString = Integer.toString(code);
+        while (codeString.length() < 8) {
+            codeString = "0" + codeString;
+        }
+        return codeString;
     }
-}
 
-class Smartphone extends Prodotto {
-    private String imei;
-    private int memoria;
-
-    public Smartphone(String nome, String descrizione, double prezzo, double iva, String imei, int memoria) {
-        super(nome, descrizione, prezzo, iva);
-        this.imei = imei;
-        this.memoria = memoria;
-    }
-}
-class Televisione extends Prodotto {
-    private int dimenzione;
-    private boolean isSmart;
-
-    public Televisione(String nome, String descrizione, double prezzo, double iva, int dimenzione, boolean isSmart) {
-        super(nome, descrizione, prezzo, iva);
-        this.dimenzione = dimenzione;
-        this.isSmart = isSmart;
+    @Override
+    public String toString() {
+        return "Prodotto{" +
+                "code=" + code +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", vat=" + vat +
+                '}';
     }
 }
 

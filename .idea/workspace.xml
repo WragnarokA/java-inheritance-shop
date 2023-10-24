@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f9006c0-2a5a-4811-b1a7-52c65b3eb3ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java-inheritance-shop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/Prodotto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shop/prova.java" afterDir="false" />
+    <list default="true" id="9f9006c0-2a5a-4811-b1a7-52c65b3eb3ff" name="Changes" comment="Shop management">
+      <change afterPath="$PROJECT_DIR$/src/shop/Carrelllo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shop/Cuffie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shop/Smartphone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shop/Television.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/Prodotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Prodotto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,20 @@
       <recent name="C:\Boolean Java\java-inheritance-shop\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Carrelllo">
+    <configuration name="Carrelllo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="shop.Carrelllo" />
+      <module name="java-inheritance-shop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="shop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="shop.Main" />
       <module name="java-inheritance-shop" />
@@ -67,6 +79,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Carrelllo" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -80,21 +93,19 @@
       <option name="presentableId" value="Default" />
       <updated>1698068047903</updated>
     </task>
+    <task id="LOCAL-00001" summary="Shop management">
+      <option name="closed" value="true" />
+      <created>1698149704256</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698149704256</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/shop/Prodotto.java</url>
-          <line>70</line>
-          <properties class="shop.Prodotto" method="getPrezzoConIva">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Shop management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shop management" />
   </component>
 </project>
